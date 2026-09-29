@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fernando Ruan — software local-first para desktop</title>
+<meta name="description" content="Portfólio de Fernando Ruan: ferramentas desktop e web que rodam inteiramente na máquina do usuário. Sem nuvem, sem telemetria, sem servidor.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#E9EAE6">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fernando Ruan — software local-first para desktop">
+<meta property="og:description" content="Sete ferramentas open-source que rodam inteiramente na máquina do usuário.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300..700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ══ MASTHEAD ═══════════════════════════════════════════════════ -->
+<header class="masthead">
+  <div class="shell">
+
+    <div class="titleblock">
+      <div class="titleblock__top">
+        <p class="eyebrow">Portfólio</p>
+        <p class="stamp">30 repositórios públicos</p>
+      </div>
+
+      <h1 class="wordmark">
+        <span class="wordmark__solid">Fernando</span><span class="wordmark__outline">Ruan</span>
+      </h1>
+
+      <div class="titleblock__cols">
+        <p class="standfirst">
+          Desenvolvedor de software desktop e web. Ferramentas que fazem o
+          trabalho pesado <em>na máquina de quem usa</em> — sem nuvem, sem
+          telemetria, sem servidor para onde mandar seus arquivos.
+        </p>
+
+        <div class="titleblock__aside">
+          <dl class="readout">
+            <div class="readout__row"><dt>Foco</dt><dd>Go · Python · TypeScript</dd></div>
+            <div class="readout__row"><dt>Forma</dt><dd>Wails · Qt6 · React</dd></div>
+            <div class="readout__row"><dt>Princípio</dt><dd>Local-first, sempre</dd></div>
+          </dl>
+
+          <a class="gh-link" href="https://github.com/fernando-ruans">
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38l-.01-1.34c-2.23.48-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.23 1.89.88 2.35.67.07-.52.28-.88.51-1.08-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            github.com/fernando-ruans
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="trace" role="img" aria-label="Traçado de osciloscópio com sete pacotes, um por projeto em destaque, na ordem em que aparecem na página. A amplitude de cada pacote cresce com o tamanho do repositório em escala logarítmica: o PdfToolkit, o maior, é o pacote mais alto, e o SDR Global Hub, o menor, é o mais baixo.">
+      <svg class="trace__svg" data-trace viewBox="0 0 1200 92" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <line class="trace__base" x1="0" y1="46" x2="1200" y2="46"></line>
+        <path class="trace__path" data-trace-path d=""></path>
+      </svg>
+      <ul class="trace__ticks" aria-hidden="true">
+        <li>D-01</li><li>D-02</li><li>D-03</li><li>D-04</li><li>W-01</li><li>W-02</li><li>F-01</li>
+      </ul>
+      <p class="trace__caption">
+        <span>Sete pacotes · um por projeto, na ordem da página</span>
+        <span>Amplitude ∝ log do tamanho do repositório</span>
+      </p>
+    </div>
+
+  </div>
+</header>
+
+<main id="conteudo">
+  <div class="shell">
+
+    <section class="section section--thesis" aria-labelledby="tese">
+      <div class="section__head">
+        <p class="section__num" aria-hidden="true">01</p>
+        <h2 class="section__title" id="tese">A tese</h2>
+      </div>
+      <div class="prose">
+        <p class="prose__lead">
+          Todo projeto que eu destaco aqui resolve o mesmo problema pelo mesmo
+          caminho: <strong>a ferramenta precisa funcionar com a internet
+          desligada.</strong> Um gerenciador de senhas que envia seu cofre para
+          um servidor é um gerenciador de senhas de outra pessoa. Um conversor de
+          vídeo que sobe seus arquivos para um bucket é um upload com interface
+          bonita no meio.
+        </p>
+        <p>
+          Então o desenho de cada ferramenta começa pela mesma pergunta — onde
+          esse dado mora enquanto o app está aberto? — e a resposta quase sempre
+          é <em>SQLite num arquivo na pasta do usuário</em>, criptografado com
+          <span class="mono">Argon2id</span> quando é segredo, e exportável em
+          um clique quando não é. O resto é interface:
+          <span class="mono">Go</span> e <span class="mono">Wails</span> quando o
+          alvo é a área de trabalho, <span class="mono">Python</span> e
+          <span class="mono">Qt</span> quando a biblioteca de mídia manda,
+          <span class="mono">React</span> quando a interface precisa ser rica.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--work" aria-labelledby="projetos">
+      <div class="section__head">
+        <p class="section__num" aria-hidden="true">02</p>
+        <h2 class="section__title" id="projetos">Projetos em destaque</h2>
+        <p class="section__note">Os únicos sete dos trinta repositórios públicos com star, agrupados por forma de entrega — porque é isso que muda a arquitetura e a interface.</p>
+      </div>
+
+      <div class="group">
+        <h3 class="group__label"><span>Desktop</span> Windows e Linux, instalador único, funciona offline</h3>
+
+        <article class="spec spec--lead">
+          <div class="spec__key">
+            <p class="spec__idx" aria-hidden="true">D-01</p>
+            <h4 class="spec__name"><a href="https://github.com/fernando-ruans/CipherSync">CipherSync</a></h4>
+            <p class="spec__kicker">Gerenciador de senhas open-source</p>
+            <svg class="spec__trace" data-mini-trace viewBox="0 0 1200 92" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path data-mini-path d=""></path></svg>
+          </div>
+          <div class="spec__val">
+            <p class="spec__body">
+              Inspirado no 1Password e construído sem nenhum servidor. A chave
+              mestra sai de <span class="mono">Argon2id</span> e o cofre é
+              selado com <span class="mono">AES-256-GCM</span> num arquivo
+              <span class="mono">SQLite</span> local. Cinco tipos de item —
+              login, nota segura, cartão, identidade e <strong>passkeys
+              FIDO2</strong> — com histórico de versões e diff visual, lixeira
+              com retenção configurável, anexos criptografados por item,
+              operações em lote e extensão de navegador para autopreenchimento.
+            </p>
+            <dl class="spec__data">
+              <div><dt>Stack</dt><dd>Go · Wails v2 · React · SQLite</dd></div>
+              <div><dt>Criptografia</dt><dd>Argon2id · AES-256-GCM</dd></div>
+              <div><dt>Entrega</dt><dd>Windows + Linux</dd></div>
+              <div><dt>Licença</dt><dd>MIT</dd></div>
+            </dl>
+            <a class="spec__link" href="https://github.com/fernando-ruans/CipherSync">Ver repositório<span aria-hidden="true"> ↗</span><span class="u-sr"> do CipherSync</span></a>
+          </div>
+        </article>
+
+        <article class="spec">
+          <div class="spec__key">
+            <p class="spec__idx" aria-hidden="true">D-02</p>
+            <h4 class="spec__name"><a href="https://github.com/fernando-ruans/NetSuite">NetSuite</a></h4>
+            <p class="spec__kicker">Diagnóstico de rede</p>
+          </div>
+          <div class="spec__val">
+            <p class="spec__body">
+              Oito checagens em paralelo por domínio — ping ICMP e TCP,
+              traceroute, DNS em seis provedores, WHOIS com expiração, varredura de
+              portas com banner, SSL/TLS e HTTP com timings e detecção de CDN —
+              com latência simulada em nove regiões e histórico que diz se o site
+              ficou mais rápido ou mais lento que a medição anterior. Watchlist de
+              até dez domínios com notificação quando o IP muda ou o serviço cai.
+              Relatório em PDF para o cliente, exportação em CSV e JSON.
+            </p>
+            <dl class="spec__data">
+              <div><dt>Stack</dt><dd>Go · Wails v2 · React · ECharts</dd></div>
+              <div><dt>Visualização</dt><dd>ECharts · SQLite</dd></div>
+              <div><dt>Entrega</dt><dd>Windows + Linux</dd></div>
+              <div><dt>Licença</dt><dd>MIT</dd></div>
+            </dl>
+            <a class="spec__link" href="https://github.com/fernando-ruans/NetSuite">Ver repositório<span aria-hidden="true"> ↗</span><span class="u-sr"> do NetSuite</span></a>
+          </div>
+        </article>
+
+        <article class="spec">
+          <div class="spec__key">
+            <p class="spec__idx" aria-hidden="true">D-03</p>
+            <h4 class="spec__name"><a href="https://github.com/fernando-ruans/AxisDoc">AxisDoc</a></h4>
+            <p class="spec__kicker">Ferramentas de escritório</p>
+          </div>
+          <div class="spec__val">
+            <p class="spec__body">
+              Vinte e três ferramentas de PDF em um app de mesa 100% offline:
+              manipulação completa de páginas, compressão, N-up, marca d'água,
+              numeração estilo livro, proteção AES, extração de texto, imagens,
+              fontes e anexos, e um editor visual de páginas com thumbnails e
+              arrastar para reordenar. Mais conversão de imagens, geração de QR
+              code, extração de texto e renomeação em lote.
+            </p>
+            <dl class="spec__data">
+              <div><dt>Stack</dt><dd>Go · Wails v2 · React · SQLite</dd></div>
+              <div><dt>Motores</dt><dd>pdfcpu · excelize</dd></div>
+              <div><dt>Entrega</dt><dd>Windows + Linux</dd></div>
+              <div><dt>Licença</dt><dd>MIT</dd></div>
+            </dl>
+            <a class="spec__link" href="https://github.com/fernando-ruans/AxisDoc">Ver repositório<span aria-hidden="true"> ↗</span><span class="u-sr"> do AxisDoc</span></a>
+          </div>
+        </article>
+
+        <article class="spec">
+          <div class="spec__key">
+            <p class="spec__idx" aria-hidden="true">D-04</p>
+            <h4 class="spec__name"><a href="https://github.com/fernando-ruans/ViraTudo">ViraTudo</a></h4>
+            <p class="spec__kicker">Conversor de mídia universal</p>
+          </div>
+          <div class="spec__val">
+            <p class="spec__body">
+              Dezoito formatos de saída entre vídeo, áudio e imagem, com controle
+              de qualidade e codecs. Tudo converte na máquina: nem a busca no
+              YouTube nem o download passam por um servidor meu. O instalador do
+              Windows traz <span class="mono">FFmpeg</span> e
+              <span class="mono">ffprobe</span> embutidos, então roda em qualquer
+              máquina sem instalar dependência nenhuma.
+            </p>
+            <dl class="spec__data">
+              <div><dt>Stack</dt><dd>Python · PySide6 (Qt6)</dd></div>
+              <div><dt>Motores</dt><dd>FFmpeg · yt-dlp</dd></div>
+              <div><dt>Entrega</dt><dd>Windows + Linux</dd></div>
+              <div><dt>Instalador</dt><dd>FFmpeg embutido · sem admin</dd></div>
+            </dl>
+            <a class="spec__link" href="https://github.com/fernando-ruans/ViraTudo">Ver repositório<span aria-hidden="true"> ↗</span><span class="u-sr"> do ViraTudo</span></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="group">
+        <h3 class="group__label"><span>Web</span> Roda no navegador ou em servidor próprio</h3>
+
+        <article class="spec">
+          <div class="spec__key">
+            <p class="spec__idx" aria-hidden="true">W-01</p>
+            <h4 class="spec__name"><a href="https://github.com/fernando-ruans/PdfToolkit">PdfToolkit</a></h4>
+            <p class="spec__kicker">Documentos e PDFs</p>
+          </div>
+          <div class="spec__val">
+            <p class="spec__body">
+              Converte qualquer arquivo comum para PDF — o LibreOffice resolve
+              Word, Excel e PowerPoint, o <span class="mono">sharp</span> resolve
+              imagem — e edita o resultado: mesclar, dividir, rotacionar, anotar,
+              proteger, extrair imagens e assinar digitalmente com certificado
+              P12. Frontend React servido pelo Express na mesma porta, sem dois
+              servidores para rodar em desenvolvimento.
+            </p>
+            <dl class="spec__data">
+              <div><dt>Stack</dt><dd>Node.js · React · Express</dd></div>
+              <div><dt>Motores</dt><dd>LibreOffice · sharp · qpdf</dd></div>
+              <div><dt>Entrega</dt><dd>Aplicação web monolítica</dd></div>
+              <div><dt>Porta</dt><dd>4000</dd></div>
+            </dl>
+            <a class="spec__link" href="https://github.com/fernando-ruans/PdfToolkit">Ver repositório<span aria-hidden="true"> ↗</span><span class="u-sr"> do PdfToolkit</span></a>
+          </div>
+        </article>
+
+        <article class="spec">
+          <div class="spec__key">
+            <p class="spec__idx" aria-hidden="true">W-02</p>
+            <h4 class="spec__name"><a href="https://github.com/fernando-ruans/SDR-Global-Hub">SDR Global Hub</a></h4>
+            <p class="spec__kicker">Rádio receptor por software</p>
+          </div>
+          <div class="spec__val">
+            <p class="spec__body">
+              Transforma o diretório clássico do <span class="mono">websdr.org</span>
+              em um painel escuro com mapa global, filtro por banda e por
+              continente, ordenação por usuários online e o player do receptor
+              embutido na página — sem abrir aba nova. Favoritos e histórico das
+              últimas vinte estações ficam no <span class="mono">LocalStorage</span>.
+              O backend só coleta a API JSON pública.
+            </p>
+            <dl class="spec__data">
+              <div><dt>Stack</dt><dd>React 19 · TypeScript · Vite</dd></div>
+              <div><dt>Backend</dt><dd>Node · Express · fetch nativo</dd></div>
+              <div><dt>Mapa</dt><dd>Leaflet · CartoDB dark</dd></div>
+              <div><dt>Entrega</dt><dd>Painel web</dd></div>
+            </dl>
+            <a class="spec__link" href="https://github.com/fernando-ruans/SDR-Global-Hub">Ver repositório<span aria-hidden="true"> ↗</span><span class="u-sr"> do SDR Global Hub</span></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="group">
+        <h3 class="group__label"><span>Full-stack</span> Frontend, API e modelos no mesmo repositório</h3>
+
+        <article class="spec">
+          <div class="spec__key">
+            <p class="spec__idx" aria-hidden="true">F-01</p>
+            <h4 class="spec__name"><a href="https://github.com/fernando-ruans/Lingua">Lingua</a></h4>
+            <p class="spec__kicker">Inglês com inteligência artificial</p>
+          </div>
+          <div class="spec__val">
+            <p class="spec__body">
+              Chat contextual, lições, desafios diários e roleplay livre com
+              criação de personagens, mais correção gramatical e vocabulário
+              extraídos da própria conversa. Flashcards com repetição espaçada
+              <span class="mono">SM-2</span>, diário de escrita, conquistas e
+              áudio de entrada e saída por <span class="mono">Whisper</span> e
+              <span class="mono">edge-tts</span>. A interface é 16-bit de
+              propósito — pixel font, scanlines e chuva de Matrix.
+            </p>
+            <dl class="spec__data">
+              <div><dt>Stack</dt><dd>React 19 · FastAPI · SQLite</dd></div>
+              <div><dt>Modelos</dt><dd>Deepseek via Ollama</dd></div>
+              <div><dt>Áudio</dt><dd>faster-whisper · edge-tts</dd></div>
+              <div><dt>Testes</dt><dd>22 frontend · 53 backend</dd></div>
+            </dl>
+            <a class="spec__link" href="https://github.com/fernando-ruans/Lingua">Ver repositório<span aria-hidden="true"> ↗</span><span class="u-sr"> do Lingua</span></a>
+          </div>
+        </article>
+      </div>
+
+      <p class="work-more">
+        Outros 23 repositórios, incluindo um proxy local compatível com a API da
+        OpenAI, um player de música com locutor de IA e uma trilha de
+        investimentos — disponíveis no
+        <a href="https://github.com/fernando-ruans?tab=repositories">perfil completo</a>.
+      </p>
+    </section>
+
+    <section class="section section--stack" aria-labelledby="inventario">
+      <div class="section__head">
+        <p class="section__num" aria-hidden="true">03</p>
+        <h2 class="section__title" id="inventario">Inventário</h2>
+        <p class="section__note">Distribuição real dos trinta repositórios públicos por linguagem detectada, e o que cada stack é usada para construir aqui.</p>
+      </div>
+
+      <figure class="langs">
+        <div class="langs__bar" role="img" aria-label="TypeScript em 8 repositórios, CSS em 6, HTML em 5, JavaScript em 4, Python em 3 e Go em 1. Mais dois forks e o repositório de perfil, sem linguagem detectada.">
+          <span class="langs__seg" style="--w:29.6" data-lang="TypeScript"></span>
+          <span class="langs__seg" style="--w:22.2" data-lang="CSS"></span>
+          <span class="langs__seg" style="--w:18.5" data-lang="HTML"></span>
+          <span class="langs__seg" style="--w:14.8" data-lang="JavaScript"></span>
+          <span class="langs__seg" style="--w:11.1" data-lang="Python"></span>
+          <span class="langs__seg" style="--w:3.7" data-lang="Go"></span>
+        </div>
+        <figcaption class="langs__legend">
+          <ul class="langs__list">
+            <li><span class="tag tag--ts">TypeScript</span><span class="langs__n">8</span></li>
+            <li><span class="tag tag--css">CSS</span><span class="langs__n">6</span></li>
+            <li><span class="tag tag--html">HTML</span><span class="langs__n">5</span></li>
+            <li><span class="tag tag--js">JavaScript</span><span class="langs__n">4</span></li>
+            <li><span class="tag tag--py">Python</span><span class="langs__n">3</span></li>
+            <li><span class="tag tag--go">Go</span><span class="langs__n">1</span></li>
+          </ul>
+          <p class="langs__aside">+ 2 forks e o repositório de perfil, sem linguagem detectada.</p>
+        </figcaption>
+      </figure>
+
+      <div class="inventory">
+        <div class="inv-col">
+          <h3 class="inv-col__title">Usado para construir</h3>
+          <dl class="inv">
+            <div class="inv__row"><dt>Desktop multiplataforma</dt><dd><span class="mono">Wails v2</span>, <span class="mono">PySide6</span>, SQLite</dd></div>
+            <div class="inv__row"><dt>Interface</dt><dd><span class="mono">React 19</span>, <span class="mono">TypeScript</span>, Vite, Tailwind</dd></div>
+            <div class="inv__row"><dt>Gráficos e áudio</dt><dd><span class="mono">ECharts</span>, <span class="mono">FFmpeg</span>, <span class="mono">yt-dlp</span></dd></div>
+            <div class="inv__row"><dt>Documentos</dt><dd><span class="mono">pdfcpu</span>, <span class="mono">LibreOffice</span>, <span class="mono">excelize</span></dd></div>
+            <div class="inv__row"><dt>Inteligência artificial</dt><dd>Ollama, <span class="mono">faster-whisper</span>, <span class="mono">edge-tts</span></dd></div>
+          </dl>
+        </div>
+        <div class="inv-col">
+          <h3 class="inv-col__title">Princípios que se repetem</h3>
+          <ul class="rules">
+            <li><span class="rules__mark" aria-hidden="true"></span><p><strong>Nada sai da máquina.</strong> Sem telemetria, sem upload, sem conta. Onde cabe, o app funciona com a rede desconectada.</p></li>
+            <li><span class="rules__mark" aria-hidden="true"></span><p><strong>Dados legíveis.</strong> SQLite num arquivo que você pode abrir, copiar e levar para outro computador.</p></li>
+            <li><span class="rules__mark" aria-hidden="true"></span><p><strong>Exportar sempre.</strong> PDF, CSV, JSON. Se eu consigo ler, você consegue.</p></li>
+            <li><span class="rules__mark" aria-hidden="true"></span><p><strong>Atalhos de teclado.</strong> Ferramenta de trabalho se usa com as mãos no teclado.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="colophon">
+  <div class="shell">
+    <div class="colophon__grid">
+      <p class="colophon__sig">Fernando Ruan</p>
+      <dl class="colophon__meta">
+        <div><dt>Tipografia</dt><dd>Archivo · Newsreader · IBM Plex Mono</dd></div>
+        <div><dt>Construção</dt><dd>HTML, CSS e JavaScript sem dependências</dd></div>
+        <div><dt>Fonte dos dados</dt><dd>API pública do GitHub</dd></div>
+      </dl>
+      <a class="colophon__cta" href="https://github.com/fernando-ruans">
+        Ver todos os repositórios <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
